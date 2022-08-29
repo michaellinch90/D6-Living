@@ -1,0 +1,96 @@
+-----MVP-----
+
+---HOMEPAGE---
+EJS 
+    - Will have a custom header with log-in link
+    - Use flex box to organize display
+    - Symbol and title in left 1st column
+    - List of available activities in the 2nd column (bank, grocery list, etc.)
+
+---LOG-IN SCREEN---
+JS
+    - Will use google people oauth to log-IN
+
+---BANK ACCOUNT---
+EJS
+    - Header and footer using partials 
+        - Link for grocery list, bank ACCOUNT and check deposit
+    - Will use grid to organize screen 4 coulmn x 
+    - Centered rows from top column 2-3: (hard code)
+        - Bank Name
+        - Adress
+        - Phone#
+    - Centered rows from top column 2-3: (referenced from account)
+        - User Name Id(Account) Number
+    - JS if function to retrive info from other urls (methost= "POST"):
+        - Transaction Date
+        - Description
+        - Deposit 
+        - Withdrawl
+            - Balance (will be calculated by the previous transactions)
+    - Final row in coulmn 4 
+        - Current Balance 
+
+JS
+    - server const transactionRouter = require('./routes/transactions')
+    - router.post(Create new transactions)
+        - Will use code similar to adding review or flight
+    - Function to add deposits and subtract withdrawls from current Balance
+        - const currentBalance = 0
+            - if deposit currentBalance + deposit
+            - if withdrawl currentBalance - withdrawl 
+                (- might have it be called trascation type
+                    - deposit = Number
+                    - withdrawl = -Number)
+            - return currentBalance
+    - Models transactions:
+        transaction schema = 
+            - Date
+            - Description
+            - Deposit
+            - Withdrawl
+                - (transatactionType)
+---Deposit Check---
+EJS
+    - Header and footer partials
+    - Will use flexbox to organize
+    - H1 Deposit check
+    - User Form:
+        - Date
+        - ID Number
+        - Deposit Amnt
+    - Sumbit button
+        - Method = 'POST'
+JS  
+    - Will use the create transaction routes
+    - Function to create a deposit 
+        - include error 
+        - include restrictions
+    - This will be just like adding a flight to the all flights page
+
+---Grocery List---
+EJS
+    - Header and footer from partials
+    - Will use gride to organize 
+    - H1 grocery list
+    - Form to insert method = "POST:
+        - Item (String)
+        - Category (dropdown string)
+        - Estimation (Number)
+    - if/forEach table to display data from form
+        - Will contain addtional column "Do we have this?"
+            - Yes buttom will delete the entry
+            - No button will add the Estimation to 'Total' box
+    - Total box that contains the sum of estimations
+    - Pay now button to sumbit data to DB
+JS
+    - Server grocery
+    - Routes post create grocery (withdrawl) to bank account
+    - Function to creat an withdrawl
+        - include error 
+        - include restrictions
+    - This will be just like adding a flight to the all flights page
+    
+-----ICE BOX-----
+
+    
